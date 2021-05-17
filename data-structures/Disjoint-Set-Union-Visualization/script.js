@@ -67,4 +67,4 @@ customElements.define('dsu-field', class extends HTMLElement {
     getColor(nodeNum) {
         return `rgb(${nodeNum*200**2%255}, ${nodeNum**3%255}, ${nodeNum*200**4%255})`
     }
-}
+});
