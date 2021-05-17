@@ -1,4 +1,4 @@
-import {DSU} from '../dsu.js';
+import {DSU} from '../../data-structures/dsu.js';
 
 customElements.define('dsu-field', class extends HTMLElement {
     constructor() {
