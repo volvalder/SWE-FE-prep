@@ -6,8 +6,8 @@
 
 #tree [id^="el"] {
     display: inline-block;
-    vertical-align: top;
     margin: 1rem;
+    vertical-align: top;
 }
 
 #tree [id^="el"].visited > span i{
@@ -23,13 +23,13 @@
     border-radius: 50%;
     box-shadow: 1px 1px 3px -1px blue;
     color: #fff;
+    display: inline-block;
     font-family: monospace;
     font-style: normal;
-    padding: 9px 10px;
-    width: 20px;
     height: 20px;
-    display: inline-block;
+    padding: 9px 10px;
     transition: background-color 1s linear;
+    width: 20px;
 }
 
 #tree .left {
@@ -38,49 +38,49 @@
 }
 
 #tree .right {
-    position: relative;
     left: 20px;
+    position: relative;
 }
 
 #tree [id^="el"].left::after {
-    content: "";
     border-top: 1px dotted #777;
-    width: calc(15% + 15px);
-    top: 0;
-    position: absolute;
-    transform: rotate(343deg);
+    content: "";
     left: calc(53% + 20px);
+    position: absolute;
+    top: 0;
+    transform: rotate(343deg);
+    width: calc(15% + 15px);
 }
 
 #tree [id^="el"].right::after {
-    content: "";
     border-top: 1px dotted #777;
-    width: calc(15% + 15px);
-    top: 0;
+    content: "";
     position: absolute;
-    transform: rotate(31deg);
     right: calc(56% + 20px);
+    top: 0;
+    transform: rotate(31deg);
+    width: calc(15% + 15px);
 }
 
 nav {
-    display: flex;
     align-items: center;
+    display: flex;
     justify-content: center;
     margin: 20px 0 40px;
 }
 
 nav button {
+    background: #52eb34;
     border: unset;
+    border-radius: 4px;
+    box-shadow: 1px 1px 3px -1px #000;
+    color: #fff;
     cursor: pointer;
-    text-decoration: none;
     font-family: monospace;
     font-size: 14px;
     margin: 0 10px;
     padding: 5px 10px;
-    background: #52eb34;
-    color: #fff;
-    border-radius: 4px;
-    box-shadow: 1px 1px 3px -1px #000;
+    text-decoration: none;
 }
 
 nav button:focus {
