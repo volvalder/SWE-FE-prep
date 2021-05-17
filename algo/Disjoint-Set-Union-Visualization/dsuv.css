@@ -1,0 +1,78 @@
+* {
+    font-family: monospace;
+}
+
+#matrix {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+#matrix > div {
+    display: flex;
+    flex-direction: row;
+}
+
+#matrix > div > span {
+    align-items: center;
+    color: #fff;
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    text-shadow: 1px 1px #000;
+    transition: background-color 0.3s ease-in-out;
+    width: 50px;
+}
+
+#controls,
+#cpanel {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+#cpanel input[type=number],
+#controls input[type=number] {
+    text-align: center;
+    width: 50px;
+}
+
+form {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin: 5px 0 10px 0;
+}
+
+form input[type=submit] {
+    background: #52eb34;
+    border: unset;
+    border-radius: 4px;
+    box-shadow: 1px 1px 3px -1px #000;
+    color: #fff;
+    cursor: pointer;
+    font-family: monospace;
+    font-size: 14px;
+    margin: 10px 0;
+    padding: 5px 10px;
+    text-decoration: none;
+    width: 100px;
+}
+
+form input[type=submit]:focus {
+    outline: none;
+}
+
+form input[type=submit]:hover {
+    background: #15d8e6;
+}
+
+form input[type=submit]:active {
+    box-shadow: 1px 1px 2px -1px #000 inset;
+}

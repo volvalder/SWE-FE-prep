@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSU Visualization</title>
+</head>
+<body>
+    <template id="dsu-visualizer">
+        <link rel="stylesheet" href="dsuv.css" type="text/css">
+        <div id="cpanel">
+            <h3>Please select your dimensions:</h3>
+            <form id="dimensions">
+                <label for="x">x</label>
+                <input name="x" id="x" type="number" min="1" max="10"/>
+                <label for="y">y</label>
+                <input name="y" id="y" type="number" min="1" max="10"/>
+                <input type="submit" value="Create" />
+            </form>
+        </div>
+        <div id="matrix"></div>
+        <form id="controls">
+            <h3>Unionize Nodes</h3>
+            <label for="that">Target Node</label>
+            <input type="number" name="that" id="that" />
+            <label for="other">Other Node</label>
+            <input type="number" name="other" id="other" />
+            <input type="submit" value="Unionize" />
+        </form>
+    </template>
+    <dsu-field></dsu-field>
+</body>
+<script type="module" src="./script.js" defer></script>
+</html>
