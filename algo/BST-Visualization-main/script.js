@@ -1,4 +1,4 @@
-import {BinarySearchTree} from './helpers/btree.js';
+import {BinarySearchTree} from '../../data-structures/btree.js';
 import {Traversals} from './helpers/traversals.js';
 
 window.addEventListener('load', () => {
