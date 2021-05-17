@@ -1,0 +1,104 @@
+#tree {
+	box-sizing: border-box;
+	position: relative;
+	text-align: center;
+}
+
+#tree [id^="el"] {
+	display: inline-block;
+	vertical-align: top;
+	margin: 1rem;
+}
+
+#tree [id^="el"].visited > span i{
+	background: #7234eb;
+}
+
+#tree span {
+	display: block;
+}
+
+#tree span i {
+	background: #15d8e6;
+	border-radius: 50%;
+	box-shadow: 1px 1px 3px -1px blue;
+	color: #fff;
+	font-family: monospace;
+	font-style: normal;
+	padding: 9px 10px;
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	transition: background-color 1s linear;
+}
+
+#tree .left {
+	position: relative;
+	right: 40px;
+}
+
+#tree .right {
+	position: relative;
+	left: 20px;
+}
+
+#tree [id^="el"].left::after {
+	content: "";
+	border-top: 1px dotted #777;
+	width: calc(15% + 15px);
+	top: 0;
+	position: absolute;
+	transform: rotate(343deg);
+	left: calc(53% + 20px);
+}
+
+#tree [id^="el"].right::after {
+	content: "";
+	border-top: 1px dotted #777;
+	width: calc(15% + 15px);
+	top: 0;
+	position: absolute;
+	transform: rotate(31deg);
+	right: calc(56% + 20px);
+}
+
+nav {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 20px 0 40px;
+}
+
+nav button {
+	border: unset;
+	cursor: pointer;
+	text-decoration: none;
+	font-family: monospace;
+	font-size: 14px;
+	margin: 0 10px;
+	padding: 5px 10px;
+	background: #52eb34;
+	color: #fff;
+	border-radius: 4px;
+	box-shadow: 1px 1px 3px -1px #000;
+}
+
+nav button:focus {
+    outline: none;
+}
+
+nav button:hover {
+	background: #15d8e6;
+}
+
+nav button:active {
+	box-shadow: 1px 1px 2px -1px #000 inset;
+}
+
+nav button[disabled] {
+	background: #ddd;
+}
+
+nav button[disabled].active {
+	background: #52eb34;
+}
