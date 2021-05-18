@@ -1,0 +1,17 @@
+:host {
+    display: flex;
+}
+
+.star::before {
+    content: '⭐';
+    font-size: 2rem;
+    opacity: 0.2;
+}
+
+.star.active::before {
+    opacity: 1;
+}
+
+.star.selected::before {
+    opacity: 1;
+}
