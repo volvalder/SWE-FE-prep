@@ -5,10 +5,7 @@ self.addEventListener('install', (event) => {
     console.log('Installed! ', event);
     self.skipWaiting();
     event.waitUntil(
-        (async() {
-            const cache = await caches.open(CACHE);
-            cache.add('./pet.svg');
-        }());
+        caches.keys().then(cache =>  cache.add('./pet.svg'));
     );
 });
 
