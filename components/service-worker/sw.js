@@ -5,7 +5,7 @@ self.addEventListener('install', (event) => {
     console.log('Installed! ', event);
     self.skipWaiting();
     event.waitUntil(
-        caches.open().then(cache => cache.add('./pet.svg'))
+        caches.open(CACHE).then(cache => cache.add('./pet.svg'))
     );
 });
 
