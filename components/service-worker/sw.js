@@ -8,6 +8,12 @@ self.addEventListener('install', (event) => {
         const cache = await caches.open(CACHE);
         cache.add('./pet.svg');
     }));
+    event.waitUntil(
+        (async() {
+            const cache = await caches.open(CACHE);
+            cache.add('./pet.svg');
+        }());
+    );
 });
 
 self.addEventListener('activated', (event) => {
