@@ -18,7 +18,7 @@ self.addEventListener('activated', (event) => {
                 keyList.map((key) => {
                     if (key === CACHE) return;
                     caches.delete(key);
-            })
+            }))
         })
     );
 });
