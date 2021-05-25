@@ -1,51 +1,58 @@
-class Promi {
-    constructor(handler) {
-        this.status = 'pending';
+class MyPromise {
+    constructor(executor) {
+        this.state = 'pending';
         this.value = null;
-        this.onFulfilledCbs = [];
-        this.onRejectedCbs = [];
+        this.waitline = [];
 
-        const resolve = value => {
-            this.status = 'fulfilled';
-            this.value = value;
-            this.onFulfilledCbs.forEach(fn => fn(value));
-        }
-        const reject = value => {
-            this.status = 'rejected';
-            this.value = value;
-            this.onRejectedCbs.forEach(fn => fn(value));
-        }
+        const resolve = (val) => {
+            this.state = 'fulfilled';
+            this.value = val;
+            this.waitline.forEach((fn) => queueMicrotask(() => fn(val)));
+        };
+        const reject = (val) => {
+            this.state = 'rejected';
+            this.value = val;
+            this.waitline.forEach((fn) => queueMicrotask(() => fn(val)));
+        };
 
         try {
-            handler(resolve, reject);
-        } catch(err) {
+            executor(resolve, reject);
+        } catch (err) {
             reject(err);
         }
     }
 
-    then(onFulfilled, onRejected) {
-        return new Promi((resolve, reject) => {
-            if (this.status === 'fulfiled') {
-                this.tryToFulfill(onFulfilled, resolve, reject);
-            } else if (this.status === 'rejected') {
-                this.tryToFulfill(onRejected, resolve, reject);
-            } else {
-                this.onFulfilledCbs.push(() => {this.tryToFulfill(onFulfilled, resolve, reject)});
-                this.onRejectedCbs.push(() => {this.tryToFulfill(onRejected, resolve, reject)});
-            }
+    then(onFulfilled, onReject) {
+        return new MyPromise((res, rej) => {
+            if (this.status === 'fulfilled') return this.process(onFulfilled, res, rej);
+            if (this.status === 'rejected') return this.process(onReject, res, rej);
+            this.waitline.push(() => { this.process(onFulfilled, res, rej) });
         });
     }
 
-    tryToFulfill(resolution, resolve, reject) {
+    process(fn, resolve, reject) {
         try {
-            const res = resolution(this.value);
-            if (res instanceof Promi) {
-                res.then(resolve, reject);
+            const resolution = fn(this.value);
+            if (resolution instanceof MyPromise) {
+                resolution.then(resolve, reject);
             } else {
-                resolve(res);
+                resolve(resolution);
             }
-        } catch(err) {
+        } catch (err) {
             reject(err);
         }
     }
 }
+
+const defer = new MyPromise((res, rej) => {
+    setTimeout(() => res('Success!'), 2000);
+});
+
+defer.then((result) => {
+    console.log(result);
+    return new MyPromise((res, rej) => {
+        setTimeout(() => res('Another Success!'), 2000);
+    });
+}).then((finalResult) => {
+    console.log(finalResult);
+});
