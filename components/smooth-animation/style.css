@@ -1,0 +1,9 @@
+#container {
+    background: #90091e;
+    border-radius: 4px;
+    border: 1px solid;
+    box-shadow: 1px 1px 3px #000;
+    height: 100px;
+    position: relative;
+    width: 100px;
+}
