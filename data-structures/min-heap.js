@@ -22,13 +22,13 @@ class MinHeap {
 
     swim() {
         let curInd = this.heap.length - 1;
-        let parent = Math.floor(curInd - 1 / 2);
+        let parent = this.#calcParent(curInd);
 
         while(parent >= 0) {
             if (this.heap[parent] > this.heap[curInd]) {
                 this.#switch(parent, curInd);
                 curInd = parent;
-                parent = Math.floor(curInd - 1 / 2);
+                parent = this.#calcParent(curInd);
                 continue;
             }
             break;
@@ -42,10 +42,11 @@ class MinHeap {
         let rInd = this.#calcRight(curInd);
 
         while(lInd <= lastInd) {
+            // Here i take lesser item between left and right only if right exists
             const nextInd = rInd <= lastInd
-                               && this.heap[lInd] - this.heap[rInd] >= 0
-                               ? rInd
-                               : lInd;
+                            && this.heap[lInd] - this.heap[rInd] >= 0
+                            ? rInd
+                            : lInd;
             if (this.heap[curInd] > this.heap[nextInd]) {
                 this.#switch(curInd, nextInd);
                 curInd = nextInd;
@@ -66,6 +67,9 @@ class MinHeap {
     }
     #calcRight(cur) {
         return Math.floor(cur*2+2);
+    }
+    #calcParent(cur) {
+        return Math.floor((cur - 1) / 2);
     }
 }
 
