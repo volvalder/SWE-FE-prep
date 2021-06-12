@@ -25,12 +25,15 @@ class Dijkstra {
         }
         console.log(
             `%cShortest path from ${source} to ${target} is ${this.path[target]}`,
-            'color: green; background: #333;'
-            )
+            'color: white; background: green; padding: 3px;'
+        );
     }
 
     #relax(verx, neib) {
         const [w, v] = neib;
+        // basically what we are asking here is if
+        // discovered vertex plus current distance 
+        // is closer than previous distance
         if(this.path[v] > this.path[verx] + w) {
             this.path[v] = this.path[verx] + w;
             this.pQ.add(this.path[v], v);
