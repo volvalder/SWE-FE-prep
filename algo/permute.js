@@ -11,7 +11,7 @@ function permute(nums) {
         // to exclude repeated number
         if(nums.indexOf(curNum) !== i) continue;
 
-        for (let perm of permute(rest)) {
+        for(let perm of permute(rest)) {
             result.push([curNum].concat(perm));
         }
     }
