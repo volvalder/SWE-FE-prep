@@ -1,7 +1,7 @@
 class Node {
-    constructor(eow) {
+    constructor() {
         this.children = Array(26);
-        this.wordEnd = eow || false;
+        this.wordEnd = false;
     }
 }
 
@@ -22,6 +22,7 @@ class Trie {
             }
             node = node.children[chCode];
         }
+        node.wordEnd = true;
     }
 
     isWordIn(word) {
