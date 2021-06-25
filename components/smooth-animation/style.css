@@ -1,9 +1,32 @@
-#container {
+body {
+	background: #333;
+}
+
+.container {
     background: #90091e;
     border-radius: 4px;
     border: 1px solid;
     box-shadow: 1px 1px 3px #000;
     height: 100px;
+    margin: 20px 0;
     position: relative;
     width: 100px;
+}
+
+#container2 {
+	background: green;
+}
+
+#container3 {
+	background: blue;
+	transition: all 10s linear;
+	left: 0;
+}
+#container3.go {
+	left: 1500px;
+}
+
+#container4 {
+	background: pink;
+	left: 0;
 }
