@@ -1,5 +1,5 @@
 body {
-	background: #333;
+    background: #333;
 }
 
 .container {
@@ -7,26 +7,26 @@ body {
     border-radius: 4px;
     border: 1px solid;
     box-shadow: 1px 1px 3px #000;
-    height: 100px;
+    height: 130px;
     margin: 20px 0;
     position: relative;
-    width: 100px;
+    width: 130px;
 }
 
 #container2 {
-	background: green;
+    background: green;
 }
 
 #container3 {
-	background: blue;
-	transition: all 10s linear;
-	left: 0;
+    background: blue;
+    transition: left 10s linear;
+    left: 0;
 }
 #container3.go {
-	left: 1500px;
+    left: 1500px;
 }
 
 #container4 {
-	background: pink;
-	left: 0;
+    background: pink;
+    left: 0;
 }
