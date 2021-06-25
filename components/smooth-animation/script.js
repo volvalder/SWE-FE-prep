@@ -41,7 +41,8 @@ function simpleMoveLeft(el, duration, distance) {
 
 function intervalMoveLeft(el, duration, distance) {
     let x = 0;
-    setInterval(() => {
+    const animation = setInterval(() => {
+        if(x > distance) clearInterval(animation);
         el.style.left = `${x}px`;
         // why 10 instead of 16 ? cause browser will take 6ms to draw a frame
         x += distance / duration * 10;
