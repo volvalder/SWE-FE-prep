@@ -1,0 +1,54 @@
+#image-container {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    width: 400px;
+}
+
+#left, #right {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    font-size: 20px;
+    justify-content: center;
+    height: 100%;
+    margin: 0 5px;
+    opacity: .7;
+    position: absolute;
+    top: 0;
+}
+
+#left:hover, #right:hover {
+    opacity: 1;
+}
+
+#left {
+    left: 0;
+}
+
+#right {
+    right: 0;
+}
+
+#screen {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    position: absolute;
+    transition: transform .5s cubic-bezier(0.1, 0.25, 0.4, 1);
+}
+
+.element {
+    height: 200px;
+    width: 400px;
+}
+
+.element {
+    background: #bada55;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.element:nth-child(2n) {
+    background: #33ccff;
+}
