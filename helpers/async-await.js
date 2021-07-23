@@ -1,6 +1,6 @@
 function asyncGen(gen) {
   // standard closure to work with the same generator
-  return async(...args) => {
+  return (...args) => {
     const generator = gen(args);
 
     function handleGen(result) {
@@ -50,5 +50,5 @@ function* testGenerator() {
 
 // async await used just to to see the final result
 // you can go without it if you are interested only in intermediate results.
-const result = await asyncGen(testGenerator)();
+const result = asyncGen(testGenerator)();
 console.log(result);
