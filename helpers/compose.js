@@ -16,12 +16,12 @@
 
 function compose(...fns) {
     return (arg) => {
-        return fns.reduceRight((agrVal, curFunc) => curFunc(agrVal), arg);
+        return fns.reduceRight((argVal, curFunc) => curFunc(argVal), arg);
     }
 }
 
 function pipe(...fns) {
     return (arg) => {
-        return fns.reduce((agrVal, curFunc) => curFunc(agrVal), arg);
+        return fns.reduce((argVal, curFunc) => curFunc(argVal), arg);
     }
 }
