@@ -1,0 +1,39 @@
+#slider {
+	width: 400px;
+	height: 200px;
+	margin: 15% auto;
+	display: flex;
+	overflow: hidden;
+	scroll-snap-type: x mandatory;
+	scroll-behavior: smooth;
+	box-shadow: 0 0 5px -2px #000;
+	border-radius: 4px;
+}
+
+.item {
+	flex: 0 0 400px;
+	scroll-snap-align: center;
+	position: relative;
+}
+
+.item a {
+	position: absolute;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	top: 0;
+}
+
+.item a:first-child {
+	left: 0;
+}
+
+.item a:last-child {
+	right: 0;
+}
+
+.item img {
+	width: 100%;
+	height: auto;
+}
