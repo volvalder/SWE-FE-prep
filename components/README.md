@@ -8,3 +8,4 @@
 * [Carousel](https://volvalder.github.io/SWE-FE-prep/components/carousel/)
 * [CSS only Carousel](https://volvalder.github.io/SWE-FE-prep/components/css-carousel/)
 * [Infinite Scroll](https://volvalder.github.io/SWE-FE-prep/components/infinite-scroll/)
+* [Spinner Example](https://volvalder.github.io/SWE-FE-prep/components/spinner/)
