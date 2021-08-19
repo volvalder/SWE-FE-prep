@@ -5,24 +5,24 @@ let cycles = 0;
 
 btn.addEventListener('click', () => {
 	if(spinner.classList.contains('animating')) {
-  	cycles ++;
-    return;
-  }
-  action();
+		cycles ++;
+		return;
+	}
+	action();
 });
 
 spinner.addEventListener('animationend', () => {
 	spinner.style.animation = '';
 	spinner.classList.remove('animating');
-  if(cycles > 0) {
-  	cycles --;
-    action();
-  }
+	if(cycles > 0) {
+		cycles --;
+		action();
+	}
 });
 
 function action() {
-  setTimeout(() => {
-    spinner.classList.add('animating');
-    spinner.style.animation = 'spin 3s linear';
-  }, 0);
+	setTimeout(() => {
+		spinner.classList.add('animating');
+		spinner.style.animation = 'spin 3s linear';
+	}, 0);
 }
