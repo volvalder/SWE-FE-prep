@@ -27,14 +27,14 @@ const products = [
 const excludes = new Map();
 
 for(let {k, v} of filters) {
-    if(!excludes.has(k)) excludes.set(k, new Set());
-    excludes.get(k).add(v);
+	if(!excludes.has(k)) excludes.set(k, new Set());
+	excludes.get(k).add(v);
 }
 
 const result = products.filter((p) => {
 	return Object.keys(p).every((key) => {
-  	return !excludes.has(key) || !excludes.get(key).has(p[key]);
-  });
+		return !excludes.has(key) || !excludes.get(key).has(p[key]);
+	});
 });
 
 console.log(result);
