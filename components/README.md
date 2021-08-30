@@ -9,3 +9,4 @@
 * [CSS only Carousel](https://volvalder.github.io/SWE-FE-prep/components/css-carousel/)
 * [Infinite Scroll](https://volvalder.github.io/SWE-FE-prep/components/infinite-scroll/)
 * [Spinner Example](https://volvalder.github.io/SWE-FE-prep/components/spinner/)
+* [Form Tester](https://volvalder.github.io/SWE-FE-prep/components/form-tester/)
