@@ -15,11 +15,11 @@ customElements.define('animated-squares', class extends HTMLElement {
   
   buildField(x, y) {
     const wrapper = document.createDocumentFragment();
-    const table = docuemnt.createElement('div');
+    const table = document.createElement('div');
     table.classList.add('table');
     
     for(let i = 0; i < x; i++) {
-      const row = docuemnt.createElement('div');
+      const row = document.createElement('div');
       row.classList.add('row');
 
       for(let j = 0; j < y; j++) {
