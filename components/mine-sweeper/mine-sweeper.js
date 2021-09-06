@@ -29,7 +29,7 @@ customElements.define('mine-sweeper', class extends HTMLElement {
         this.field = [...Array(+x)].map(_ => [...Array(+y)]);
 
         this.shadowRoot.querySelector('#field').addEventListener('click', (e) => {
-            if(!e.target?.classList.contains('cell')) return;
+            if(!e.target?.classList.contains('cell') || e.target?.classList.contains('flagged')) return;
             const cell = e.target;
             const [row, col] = cell.getAttribute('pos').split('-');
 
@@ -41,6 +41,14 @@ customElements.define('mine-sweeper', class extends HTMLElement {
             }
             
         }, {capture: true});
+
+        
+        this.shadowRoot.querySelector('#field').addEventListener('contextmenu', (e) => {
+            e.preventDefault();
+            if(!e.target?.classList.contains('cell')) return;
+            const cell = e.target;
+            cell.classList.toggle('flagged');
+        });
 
         this.generateField(+x-1, +y-1, this.difficulty);
         this.render(field, +x-1, +y-1,)
