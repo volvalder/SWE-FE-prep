@@ -1,7 +1,3 @@
-:root {
-    
-}
-
 #field {
     display: flex;
     flex-direction: column;
@@ -32,4 +28,9 @@
 .cell.visited {
     background: #fff;
     color: hsl(200, 77%, 33%);
+}
+
+.cell.flagged::after {
+    display: block;
+    content: "🚩";
 }
