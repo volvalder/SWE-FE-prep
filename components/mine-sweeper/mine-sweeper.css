@@ -1,0 +1,35 @@
+:root {
+    
+}
+
+#field {
+    display: flex;
+    flex-direction: column;
+}
+
+.row:first-child .cell {
+    border-top: 1px solid;
+}
+
+.row {
+    border-left: 1px solid;
+    display: flex;
+}
+
+.cell {
+    align-items: center;
+    background: #999;
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+    box-shadow: 1px 1px #fff inset;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+}
+
+.cell.visited {
+    background: #fff;
+    color: hsl(200, 77%, 33%);
+}
