@@ -11,3 +11,4 @@
 * [Spinner Example](https://volvalder.github.io/SWE-FE-prep/components/spinner/)
 * [Form Tester](https://volvalder.github.io/SWE-FE-prep/components/form-tester/)
 * [Animated Squares](https://volvalder.github.io/SWE-FE-prep/components/animated-squares/)
+* [Mine Sweeper](https://volvalder.github.io/SWE-FE-prep/components/mine-sweeper/)
