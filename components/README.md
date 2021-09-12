@@ -12,3 +12,4 @@
 * [Form Tester](https://volvalder.github.io/SWE-FE-prep/components/form-tester/)
 * [Animated Squares](https://volvalder.github.io/SWE-FE-prep/components/animated-squares/)
 * [Mine Sweeper](https://volvalder.github.io/SWE-FE-prep/components/mine-sweeper/)
+* [Select Area](https://volvalder.github.io/SWE-FE-prep/components/select-area/)
