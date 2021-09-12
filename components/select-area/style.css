@@ -1,0 +1,54 @@
+.area {
+  align-items: center;
+  border: 1px solid #333;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 75px 25px;
+  position: relative;
+  margin: 10% auto;
+  width: 50%;
+}
+
+.box {
+  background: hsl(111, 50%, 50%);
+  height: 120px;
+  margin: 5px;
+  width: 120px;
+  box-shadow: 0 0 1px 1px #000;
+}
+
+.box.selected {
+  background: hsl(0, 50%, 50%);
+}
+
+.static-point {
+  height: 1px;
+  position: absolute;
+  width: 1px;
+}
+
+.selection {
+  background: hsl(222, 50%, 50%);
+  height: 0;
+  position: absolute;
+  width: 0;
+  opacity: 0.5;
+}
+
+.selection[dir=top-left] {
+  right: 0;
+  bottom: 0;
+}
+.selection[dir=top-right] {
+  left: 0;
+  bottom: 0;
+}
+.selection[dir=bot-left] {
+  right: 0;
+  top: 0;
+}
+.selection[dir=bot-right] {
+  left: 0;
+  top: 0;
+}
