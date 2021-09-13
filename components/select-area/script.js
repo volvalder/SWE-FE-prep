@@ -52,6 +52,6 @@ function isIntersecting(box, selection) {
 
   return (top + height > rect.top
     && left + width > rect.left
-    && bottom - height < rect.bottom
-    && right - width < rect.right);
+    && top < rect.bottom
+    && left < rect.right);
 }
