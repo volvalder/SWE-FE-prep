@@ -13,3 +13,4 @@
 * [Animated Squares](https://volvalder.github.io/SWE-FE-prep/components/animated-squares/)
 * [Mine Sweeper](https://volvalder.github.io/SWE-FE-prep/components/mine-sweeper/)
 * [Select Area](https://volvalder.github.io/SWE-FE-prep/components/select-area/)
+* [Moving Square](https://volvalder.github.io/SWE-FE-prep/components/moving-sqare/)
