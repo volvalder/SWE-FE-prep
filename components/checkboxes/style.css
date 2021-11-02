@@ -1,0 +1,8 @@
+ul {
+  list-style: none;
+  font-family: monospace;
+}
+
+li {
+  margin: 5px 0;
+}
