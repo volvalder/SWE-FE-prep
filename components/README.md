@@ -14,3 +14,4 @@
 * [Mine Sweeper](https://volvalder.github.io/SWE-FE-prep/components/mine-sweeper/)
 * [Select Area](https://volvalder.github.io/SWE-FE-prep/components/select-area/)
 * [Moving Square](https://volvalder.github.io/SWE-FE-prep/components/moving-square/)
+* [Checkboxes](https://volvalder.github.io/SWE-FE-prep/components/checkboxes/)
