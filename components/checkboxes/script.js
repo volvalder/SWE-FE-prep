@@ -9,7 +9,7 @@ list.addEventListener('click', function parse({target}) {
 	if(closestParent.id === 'list' || closestParent.tagName === 'BODY') return; // base case
 
 	const checkValues = new Set(
-			Array.from(closestParent.children).map(el => {
+		Array.from(closestParent.children).map(el => {
 			const input = el.querySelector('input');
 			return input.indeterminate ? 'indeterminate' : input.checked;
 		})
