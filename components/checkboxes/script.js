@@ -3,7 +3,7 @@ const groupCheckboxes = document.querySelectorAll('.group');
 
 list.addEventListener('click', function parse({target}) {
 	if(target.tagName !== 'INPUT') return;
-  
+
   const closestParent = target.parentNode.parentNode;
   
   if(closestParent.id === 'list' || closestParent.tagName === 'BODY') return; // base case
@@ -22,24 +22,24 @@ list.addEventListener('click', function parse({target}) {
   commonCheckbox.checked = false;
   
   if(isIndeterminate) {
-  	commonCheckbox.indeterminate = true;
+		commonCheckbox.indeterminate = true;
   } else {
-  	commonCheckbox.checked = [...checkValues][0];
+		commonCheckbox.checked = [...checkValues][0];
   }
-  
-  parse({target: commonCheckbox});
+
+	parse({target: commonCheckbox});
 });
 
 groupCheckboxes.forEach(checkbox => checkbox.addEventListener('click', function parse({target}) {
 	const state = target.checked;
-  const list = target.parentNode;
-  
-  list.querySelectorAll('li').forEach(li => {
+	const list = target.parentNode;
+
+	list.querySelectorAll('li').forEach(li => {
 		const input = li.querySelector('input');
-    
-  	input.indeterminate = false;
-    input.checked = state;
-    
-    if(input.classList.contains('group')) parse({target: input});
+
+		input.indeterminate = false;
+		input.checked = state;
+
+		if(input.classList.contains('group')) parse({target: input});
   });
 }));
